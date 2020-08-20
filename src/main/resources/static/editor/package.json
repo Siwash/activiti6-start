@@ -1,0 +1,56 @@
+{
+  "name": "editor",
+  "version": "1.0.0",
+  "dependencies": {
+    "gifsicle": "^0.1.7",
+    "jpegtran-bin": "^0.2.8",
+    "optipng-bin": "^0.3.11",
+    "pngquant-bin": "^0.1.7"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --port 4204",
+    "hmr": "ng serve --port 4204 -c=hmr",
+    "build": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build --prod --sourceMap=true",
+    "build:release": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build --prod --sourceMap=false",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --pkg package.json && node ./scripts/release/replace-scope-prefix.js",
+    "test": "ng test --watch=true --code-coverage",
+    "test:nowatch": "ng test --code-coverage --watch=false --browsers ChromeHeadless",
+    "lint": "tslint -c tslint.json 'src/app/**/*.ts' && stylelint src/**/*.less",
+    "release": "node ./scripts/release/release.js",
+    "e2e": "ng e2e",
+    "cy": "cypress open",
+    "analyzer": "ng build --prod --stats-json && webpack-bundle-analyzer dist/stats-es5.json"
+  },
+  "devDependencies": {
+    "grunt": "0.4.2",
+    "grunt-autoprefixer": "0.4.0",
+    "grunt-bower-install": "0.7.0",
+    "grunt-concurrent": "0.4.1",
+    "grunt-contrib-clean": "0.5.0",
+    "grunt-contrib-coffee": "0.7.0",
+    "grunt-contrib-compass": "0.6.0",
+    "grunt-contrib-concat": "0.3.0",
+    "grunt-contrib-connect": "0.5.0",
+    "grunt-contrib-copy": "0.4.1",
+    "grunt-contrib-cssmin": "0.7.0",
+    "grunt-contrib-htmlmin": "0.1.3",
+    "grunt-contrib-imagemin": "0.3.0",
+    "grunt-contrib-jshint": "0.7.1",
+    "grunt-contrib-uglify": "0.2.0",
+    "grunt-contrib-watch": "0.5.2",
+    "grunt-google-cdn": "0.2.0",
+    "grunt-newer": "0.5.4",
+    "grunt-ng-annotate": "0.5.0",
+    "grunt-rev": "0.1.0",
+    "grunt-svgmin": "0.2.0",
+    "grunt-usemin": "2.0.0",
+    "jshint-stylish": "0.1.3",
+    "load-grunt-tasks": "0.2.0",
+    "time-grunt": "0.2.1",
+    "grunt-contrib-compress": "0.7.0"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
