@@ -1,7 +1,7 @@
 spring:
   datasource:
     username: root
-    password: Emat1234
+    password: 
     url: jdbc:mysql://localhost:3306/activiti-start?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Hongkong&nullCatalogMeansCurrent=true
 #  resources:
 #    static-locations: file:E:\workSpace\web\design\webapp
